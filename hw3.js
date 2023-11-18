@@ -4,8 +4,8 @@ articlesArray.unshift("Внедрение CRM системы PlanFix в бизн
 
 console.log("Порядковый номер статьи - ",articlesArray.indexOf("Чем я занимаюсь сейчас")+1);
 
-let popArticle1 = articlesArray.pop();
-console.log(popArticle1);
+let shiftArticle1 = articlesArray.shift();
+console.log(shiftArticle1);
 let popArticle2 = articlesArray.pop();
 console.log(popArticle2);
 let popArticle3 = articlesArray.pop();
