@@ -1,9 +1,20 @@
 //1. Функция User
 function User (name){
-    this.name=name;
+    this.name = name;
 }
 let newUser = new User("Nikita");
 console.log(newUser);
+//Домашняя работа №6 Добавим неизменямое поле ID
+Object.defineProperty(User, "ID",{
+    writable: false,
+    value: 185,
+})
+
+//Домашняя работа №6 Метод getInfo
+User.getInfo = function(){
+    return `Пользователь ${this.name} имеет ${this.articles.length} статей`;
+};
+
 //2. Функция Article
 function Article(artName,artTxt) {
     this.name=artName;
@@ -20,3 +31,5 @@ console.log(artArray);
 //5. Добавим поле articles (здесь храним массив статей) в объект
 userObj.articles=artArray;
 console.log(userObj);
+
+console.log(User.getInfo());
