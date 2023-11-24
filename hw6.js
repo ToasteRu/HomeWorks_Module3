@@ -4,16 +4,6 @@ function User (name){
 }
 let newUser = new User("Nikita");
 console.log(newUser);
-//Домашняя работа №6 Добавим неизменямое поле ID
-Object.defineProperty(User, "ID",{
-    writable: false,
-    value: 185,
-})
-
-//Домашняя работа №6 Метод getInfo
-User.getInfo = function(){
-    return `Пользователь ${this.name} имеет ${this.articles.length} статей`;
-};
 
 //2. Функция Article
 function Article(artName,artTxt) {
@@ -32,4 +22,17 @@ console.log(artArray);
 userObj.articles=artArray;
 console.log(userObj);
 
-console.log(User.getInfo());
+//Домашняя работа №6 Добавим неизменямое поле ID
+Object.defineProperty(newUser, "ID",{
+    writable: false,
+    value: 185,
+})
+console.log(newUser);
+
+//Домашняя работа №6 Метод getInfo
+userObj.user = newUser;
+userObj.getInfo = function(){
+    return `Пользователь ${this.user.name} имеет ${this.articles.length} статьи`;
+};
+
+console.log(userObj.getInfo());
