@@ -11,14 +11,10 @@ function logNumberOfUserArticles(user) {
     console.log(`У пользователя ${articleLength} статьи`);
     switch (articleLength) {
         case 0:
-            console.log("Нужно добавить больше статей!");
-            break;
         case 1:
             console.log("Нужно добавить больше статей!");
             break;
         case 2:
-            console.log("Отличное начало!");
-            break;
         case 3:
             console.log("Отличное начало!");
             break;
