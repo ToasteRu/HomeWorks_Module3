@@ -2,10 +2,10 @@ function userData (name,age){
     const nameDefault = "Nikita";
     const ageDefault = 26;
     if (!name){
-        let name = nameDefault;
+        name = nameDefault;
     };
     if (!age){
-        let age = ageDefault;
+        age = ageDefault;
     };
     function returningFunc(){
         return {
@@ -18,3 +18,5 @@ function userData (name,age){
 
 let user1 = userData("Jim", 34);
 console.log(user1());
+let user2 = userData();
+console.log(user2());
