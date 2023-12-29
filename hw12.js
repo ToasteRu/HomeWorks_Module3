@@ -1,22 +1,15 @@
-function userData (name,age){
-    const nameDefault = "Nikita";
-    const ageDefault = 26;
-    if (!name){
-        name = nameDefault;
-    };
-    if (!age){
-        age = ageDefault;
-    };
-    function returningFunc(){
-        return {
-            name: name,
-            age: age,
-        }
-    };
-    return returningFunc;
+let user = {
+    name: "Nik",
+    age: 26,
+    articles: [{name:"Почему я пошел на курс к Алексею"},{name:"Чем я занимаюсь сейчас"},{name:"Внедрение CRM системы PlanFix в бизнес"},{name:"Какой музыкальный фестиваль я хочу посетить"}],
 };
 
-let user1 = userData("Jim", 34);
-console.log(user1());
-let user2 = userData();
-console.log(user2());
+function logUsersArticles() {
+    let userArticles = this.articles;
+    userArticles.forEach((article, index) => {
+    console.log(`Название статьи ${index+1} ${article.name}`);
+    });
+};
+
+user.logDataArticles = logUsersArticles;
+user.logDataArticles();
