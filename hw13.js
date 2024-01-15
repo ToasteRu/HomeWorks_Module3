@@ -11,5 +11,4 @@ function logUsersArticles() {
     });
 };
 
-user.logDataArticles = logUsersArticles;
-user.logDataArticles();
+console.log(logUsersArticles.bind(user)());
